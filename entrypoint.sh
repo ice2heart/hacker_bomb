@@ -4,7 +4,7 @@
 
 set -e
 
-chown -R proxyu:proxyu ~proxyu
+chown -R hacker_bomb:hacker_bomb ~hacker_bomb
 
 COMMAND="$@"
 if [ -z "$COMMAND" ]; then
