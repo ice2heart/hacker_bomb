@@ -44,7 +44,7 @@ dockers:
   - goos: linux
     goarch: amd64
     # Name templates of the built binaries that should be used.
-    binaries:
+    ids:
       - hacker_bomb
     image_templates:
       - "ghcr.io/ice2heart/hacker_bomb:latest"
