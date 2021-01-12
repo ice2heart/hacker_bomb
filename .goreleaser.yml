@@ -48,7 +48,7 @@ dockers:
       - hacker_bomb
     image_templates:
       - "ghcr.io/ice2heart/hacker_bomb:latest"
-      - "ghcr.io/ice2heart/hacker_bomb{{ .Tag }}"
+      - "ghcr.io/ice2heart/hacker_bomb:{{ .Tag }}"
       - "ghcr.io/ice2heart/hacker_bomb:v{{ .Major }}"
     skip_push: auto
     dockerfile: Dockerfile
