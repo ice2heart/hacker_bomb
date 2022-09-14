@@ -1,6 +1,8 @@
 package main
 
 import (
+	"flag"
+	"fmt"
 	"log"
 	"net/http"
 
@@ -18,10 +20,12 @@ func (h httpHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	serverPort := flag.Int("port", 8080, "Web server port")
+	flag.Parse()
 	box := packr.New("blob", "./content")
 	bomb, err := box.Find("bomb.gz")
 	if err != nil {
 		log.Fatal(err)
 	}
-	http.ListenAndServe(":8080", httpHandler{Content: bomb})
+	http.ListenAndServe(fmt.Sprintf(":%d", *serverPort), httpHandler{Content: bomb})
 }
